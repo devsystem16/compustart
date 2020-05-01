@@ -27,7 +27,15 @@ class ClienteController extends Controller
     }
 
     public function create (Request $request){
-        return Cliente::create($request->all());
+         $existeUser = DB::select (" select * from  cliente where cedula ='". $request->cedula."' AND IDStatus= (select  IDStatus from status where descripcion ='Activo')");  
+         if ( $existeUser ) {
+            return [
+                'code' =>  400 ,
+                'message' => 'El usuario ya existe'
+            ];
+         }else {
+            return Cliente::create($request->all());
+         }
     }
 
     public function update (Request $request, $id){

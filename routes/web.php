@@ -15,4 +15,28 @@ Route::get('/', function () {
     return view('welcome');
 });
 
- 
+ Route::get('/login', function () {
+    return view('welcome');
+});
+
+
+ Route::get('/menu', function () {
+    return view('welcome');
+});
+
+
+ Route::get('/ordenes', function () {
+    return view('welcome');
+});
+ Route::get('/clientes', function () {
+    return view('welcome');
+});
+
+
+
+ Route::get('/usuarios', function () {
+    return view('welcome');
+});
+ Route::get('/ordenesgarantia', function () {
+    return view('welcome');
+});
