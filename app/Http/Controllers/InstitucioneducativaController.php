@@ -4,11 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Entities\Institucioneducativa;
 use Illuminate\Http\Request;
- 
+use Illuminate\Support\Facades\DB;
+
 class InstitucioneducativaController extends Controller
 {
     public function findAll (){
-        return Institucioneducativa::all();
+   
+        return Institucioneducativa::all('IDInstitucionEducativa as value','Descripcion as label' , 'IDDistrito as distrito' );
+    }
+
+    public function findByDistrit ($idDistrit){
+        // return DB::select (" call cargarColegios('".$idDistrit."'); ");
+
+        return DB::select (" SELECT IDInstitucionEducativa as value , descripcion as label , IDDistrito FROM compuservices.institucioneducativa  where 
+         IDDistrito='".$idDistrit."'
+        AND IDStatus =(select  IDStatus from status where descripcion ='Activo') ;");
+
+        
     }
 
     public function findBy ($id){

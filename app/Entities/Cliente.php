@@ -10,6 +10,6 @@ class Cliente extends Model
     protected $primaryKey = 'IDCliente';
     public $incrementing = false;
     public $timestamps = false;
-    protected $fillable =['IDCliente', 'codigo', 'cedula', 'nombre1', 'nombre2', 'apellidoPaterno', 'apellidoMaterno', 'celular', 'direccion', 'correo', 'IDStatus', 'IDCiudad'];
+    protected $fillable =['IDCliente', 'codigo', 'cedula', 'nombre1', 'nombre2', 'apellidoPaterno', 'apellidoMaterno', 'celular', 'direccion', 'correo', 'IDStatus', 'IDCiudad','IDDistrito','IDInstitucionEducativa'];
 
 }

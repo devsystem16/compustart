@@ -93,6 +93,12 @@
 
     Route::get('/getStatus/{estado}','StatusController@getEstado');
 
+
+    Route::get('/distrito',  'DistritoController@findAll');
+    Route::get('/colegios',  'InstitucioneducativaController@findAll');
+    Route::get('/colegios/{idDistrito}',  'InstitucioneducativaController@findByDistrit');
+
+
     Route::get('/uuid', function (Request $request) {
         $uuid1 = Uuid::uuid1();
         return    $uuid1   ;

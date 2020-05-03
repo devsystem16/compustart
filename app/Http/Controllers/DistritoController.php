@@ -9,7 +9,7 @@ use App\Entities\Distrito;
 class DistritoController extends Controller
 {
     public function findAll (){
-        return Distrito::all();
+        return Distrito::all('IDDistrito as value','descripcion as label');
     }
 
     public function findBy ($id){
