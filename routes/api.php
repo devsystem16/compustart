@@ -85,18 +85,25 @@
     Route::post('/rol/{id}',  'RolController@update');
     Route::delete('/rol/{id}',  'RolController@delete');
  
-    Route::get('/abonos',  'AbonosController@findAll');
-    Route::get('/abonos/{id}',  'AbonosController@findBy');
-    Route::post('/abonos',  'AbonosController@create');
-    Route::post('/abonos/{id}',  'AbonosController@update');
-    Route::delete('/abonos/{id}',  'AbonosController@delete');
+    Route::get('/ordenfalla',  'OrdenfallaController@findAll');
+    Route::get('/ordenfalla/{id}',  'OrdenfallaController@findBy');
+    Route::post('/ordenfalla',  'OrdenfallaController@create');
+    Route::post('/ordenfalla/{id}',  'OrdenfallaController@update');
+    Route::delete('/ordenfalla/{id}',  'OrdenfallaController@delete');
 
     Route::get('/getStatus/{estado}','StatusController@getEstado');
 
 
     Route::get('/distrito',  'DistritoController@findAll');
+
+
+
     Route::get('/colegios',  'InstitucioneducativaController@findAll');
     Route::get('/colegios/{idDistrito}',  'InstitucioneducativaController@findByDistrit');
+
+
+    Route::get('/catalogofallas',  'CatalogofallasController@findAll');
+    Route::post('/catalogofallas',  'CatalogofallasController@create');
 
 
     Route::get('/uuid', function (Request $request) {
