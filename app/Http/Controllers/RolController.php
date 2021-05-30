@@ -9,7 +9,7 @@ use App\Entities\Rol;
 class RolController extends Controller
 {
     public function findAll (){
-        return Rol::all();
+      return DB::select (" SELECT * FROM compuservices.rol where IDStatus = (select   IDStatus from status  where descripcion ='Activo');");
     }
 
     public function findBy ($id){

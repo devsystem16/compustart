@@ -52,7 +52,7 @@
     Route::get('/reporteOrdenesGarantiaHaitech/{fechaInicio}/{fechaFin}',  'OrdenController@reporteGarantiaSoloHaitech');
 
     Route::get('/getorden/{numeroorden}',  'OrdenController@getOrden');
-
+    Route::get('/get-info-ticket/{IDOrden}',  'OrdenController@getInfoTicket');
 
 
     Route::get('/tipoequipo',  'TipoEquipoController@findAll');
@@ -94,12 +94,16 @@
     Route::get('/getStatus/{estado}','StatusController@getEstado');
 
 
+    Route::get('/zonas',  'ZonaController@findAll');
     Route::get('/distrito',  'DistritoController@findAll');
+    Route::get('/distrito/{idZona}',  'DistritoController@findByZona');
+    Route::get('/ciudad-distrito/{idDistrito}',  'CiudadDistritoController@findByDistrito');
 
 
+    Route::get('/ciudad-distrito',  'CiudadDistritoController@findAll');
 
     Route::get('/colegios',  'InstitucioneducativaController@findAll');
-    Route::get('/colegios/{idDistrito}',  'InstitucioneducativaController@findByDistrit');
+    Route::get('/colegios/{idCiudadDistrito}',  'InstitucioneducativaController@findByCiudadDistrit');
 
 
     Route::get('/catalogofallas',  'CatalogofallasController@findAll');

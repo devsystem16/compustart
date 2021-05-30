@@ -16,6 +16,10 @@ class OrdenController extends Controller
         return DB::select ("CALL reporteGarantia ( '".$inicio."' , '".$fin."' );");
     }
 
+    public function getInfoTicket ($IDOrden   ){
+        return DB::select ("CALL getInfoTicket ( '".$IDOrden."');");
+    }
+
     public function reporteGarantiaSoloHaitech ($inicio  , $fin ){
         return DB::select  ("CALL reporteGarantiaSoloHaitech ( '".$inicio."' , '".$fin."' );");
     }
@@ -29,7 +33,8 @@ class OrdenController extends Controller
     }
 
     public function create (Request $request){
-        return Orden::create($request->all());
+      
+      return Orden::create($request->all());
     }
 
     public function update (Request $request, $id){

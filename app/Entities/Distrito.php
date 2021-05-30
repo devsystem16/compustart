@@ -10,5 +10,5 @@ class Distrito extends Model
     protected $primaryKey = 'IDDistrito';
     public $incrementing = false;
     public $timestamps = false;
-    protected $fillable = ['IDDistrito', 'descripcion', 'IDStatus'];
+    protected $fillable = ['IDDistrito', 'descripcion', 'IDStatus', 'IDZona'];
 }

@@ -16,6 +16,14 @@ class DistritoController extends Controller
         return Distrito::find($id);
     }
 
+
+    public function findByZona ($idZona){
+        // return DB::select (" call cargarColegios('".$idDistrit."'); ");
+        return DB::select (" SELECT  IDDistrito as value , descripcion as label , IDZona  FROM compuservices.distrito  where 
+         IDZona='".$idZona."'
+        AND IDStatus =(select  IDStatus from status where descripcion ='Activo') ;");
+    }
+
     public function create (Request $request){
         return Distrito::create($request->all());
     }

@@ -13,11 +13,11 @@ class InstitucioneducativaController extends Controller
         return Institucioneducativa::all('IDInstitucionEducativa as value','Descripcion as label' , 'IDDistrito as distrito' );
     }
 
-    public function findByDistrit ($idDistrit){
+    public function findByCiudadDistrit ($idCiudadDistrito){
         // return DB::select (" call cargarColegios('".$idDistrit."'); ");
 
-        return DB::select (" SELECT IDInstitucionEducativa as value , descripcion as label , IDDistrito FROM compuservices.institucioneducativa  where 
-         IDDistrito='".$idDistrit."'
+        return DB::select (" SELECT IDInstitucionEducativa as value , descripcion as label , IDCiudadDistrito FROM compuservices.institucioneducativa  where 
+         IDCiudadDistrito='".$idCiudadDistrito."'
         AND IDStatus =(select  IDStatus from status where descripcion ='Activo') ;");
 
         
